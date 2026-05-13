@@ -1,45 +1,30 @@
 {
-  // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
-    // File Layout
-    // "rootDir": "./src",
     "skipDefaultLibCheck": true,
     "outDir": "./dist",
+    
+    // 1. ปรับมาใช้ระบบจัดการโมดูลมาตรฐานทั่วไป
+    "module": "Node16",
+    "target": "ES2022",
+    
+    // 2. เปิดตัวช่วยจำลองแปลงโค้ดให้เขียน import แบบธรรมดาได้ (เส้นแดงจาก express/http จะหายไป)
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
 
-    // Environment Settings
-    // See also https://aka.ms/tsconfig/module
-    "module": "nodenext",
-    "target": "esnext",
-    "types": ["node"],
-    // For nodejs:
-    // "lib": ["esnext"],
-    // "types": ["node"],
-    // and npm install -D @types/node
-
-    // Other Outputs
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
 
-    // Stricter Typechecking Options
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
 
-    // Style Options
-    // "noImplicitReturns": true,
-    // "noImplicitOverride": true,
-    // "noUnusedLocals": true,
-    // "noUnusedParameters": true,
-    // "noFallthroughCasesInSwitch": true,
-    // "noPropertyAccessFromIndexSignature": true,
-
-    // Recommended Options
     "strict": true,
     "jsx": "react-jsx",
-    "verbatimModuleSyntax": true,
+    
+    // 3. ปิดโหมดตรวจเข้มงวดน่ารำคาญ (เปลี่ยนเป็น false)
+    "verbatimModuleSyntax": false,
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
-    "moduleDetection": "force",
-    "skipLibCheck": true,
+    "skipLibCheck": true
   }
 }
