@@ -3,11 +3,13 @@
     "skipDefaultLibCheck": true,
     "outDir": "./dist",
     
-    // 1. ปรับมาใช้ระบบจัดการโมดูลมาตรฐานทั่วไป
-    "module": "Node16",
+    // จุดสำคัญ: เพิ่มบรรทัดนี้เพื่อแก้ปัญหาคอมไพล์หาไดเรกทอรีรากฐานไม่เจอ
+    "rootDir": "./",
+    
+    "module": "node16",
+    "moduleResolution": "node16",
     "target": "ES2022",
     
-    // 2. เปิดตัวช่วยจำลองแปลงโค้ดให้เขียน import แบบธรรมดาได้ (เส้นแดงจาก express/http จะหายไป)
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
 
@@ -21,10 +23,10 @@
     "strict": true,
     "jsx": "react-jsx",
     
-    // 3. ปิดโหมดตรวจเข้มงวดน่ารำคาญ (เปลี่ยนเป็น false)
     "verbatimModuleSyntax": false,
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "skipLibCheck": true
   }
 }
+

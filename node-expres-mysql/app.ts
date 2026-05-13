@@ -1,8 +1,8 @@
-import express from "express"; // กลับมาใช้แบบปกติ
-import { router as index } from "./api/index"; // ลบ .js ออกไปเลยครับ
+import express from "express";
+import { router as index } from "./api/index";
+import { router as trip } from "./api/trip";
 
 export const app = express();
 
-app.use("/", (req, res) => {
-  res.send("Hello World!!!");
-});
+app.use("/", index);
+app.use("/trip", trip);
