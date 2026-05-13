@@ -2,31 +2,25 @@
   "compilerOptions": {
     "skipDefaultLibCheck": true,
     "outDir": "./dist",
-    
-    // จุดสำคัญ: เพิ่มบรรทัดนี้เพื่อแก้ปัญหาคอมไพล์หาไดเรกทอรีรากฐานไม่เจอ
     "rootDir": "./",
     
-    "module": "node16",
-    "moduleResolution": "node16",
+    // ตั้งค่าคู่พัฒนาให้ทำงานร่วมกับระบบสากล
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
     "target": "ES2022",
     
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
-
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
-
     "strict": true,
     "jsx": "react-jsx",
-    
     "verbatimModuleSyntax": false,
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "skipLibCheck": true
   }
 }
-

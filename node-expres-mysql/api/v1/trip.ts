@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-  const { id } = req.params;
+  const id  = req.params.id;
   conn.query("select * from trip where idx = ?" , [id], (err, result) => {
     if (err) return res.status(500).json({ error: err.message });
     res.json(result);
@@ -53,7 +53,7 @@ router.post("/", (req, res) => {
 });
 
 router.put("/:id", (req, res) => { 
-  let { id } = req.params;
+  let id = req.params.id;
   let trip: TripPostRequest = req.body;
   let sql =
     "UPDATE `trip` SET `name`=?,`country`=?,`destinationid`=?,`coverimage`=?,`detail`=?,`price`=?,`duration`=? WHERE idx = ?";
