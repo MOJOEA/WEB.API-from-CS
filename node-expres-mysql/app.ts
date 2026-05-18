@@ -1,7 +1,7 @@
 import express from "express";
-import { router as index } from "./api/v1/index";
-import { router as trip } from "./api/v1/trip";
-import { router as upload } from "./api/v1/upload";
+import { router as index } from "./controller/index";
+import { router as trip } from "./controller/trip/trip";
+import { router as upload } from "./controller/upload/upload";
 
 import bodyParser from "body-parser";
 import path from "path/win32";
@@ -37,7 +37,7 @@ app.use(jwtAuthen, (err: any, req: any, res: any, next: any) => {
 // Test Token
 app.use("/testtoken", (req, res) => {
     const payload: any = { username: "Tada" }; 
-    const jwttoken = generateToken(payload, secret);
+    const jwttoken = generateToken(payload, secret as string);
   res.status(200).json({
     token: jwttoken,
   });

@@ -2,6 +2,7 @@ import { expressjwt, Request as JWTRequest } from "express-jwt";
 import jwt from "jsonwebtoken";
 
 export const secret = process.env.SECRET_KEY;
+
 export const jwtAuthen = expressjwt({
   secret: secret as string,
   algorithms: ["HS256"],
